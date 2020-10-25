@@ -7,6 +7,7 @@ import ru.example.construct.repository.dto.FeatureCollectionDto;
 import ru.example.construct.repository.dto.FeatureDto;
 import ru.example.construct.repository.entity.Feature;
 import ru.example.construct.repository.mapper.FeatureMapper;
+import ru.example.construct.repository.specification.GeoSpecification;
 import ru.example.construct.service.util.FeaturesOperation;
 import ru.example.construct.service.util.GeoJsonParser;
 
@@ -39,8 +40,7 @@ public class GeoService {
     }
 
     public FeatureCollectionDto getFeatureCollectionByState(boolean state) {
-        Iterable<Feature> list = repository.findAll();
-        List<Feature> features = StreamSupport.stream(list.spliterator(), false).collect(Collectors.toList());
+        List<Feature> features = repository.findAll(GeoSpecification.getFeatureWithColorRedOrBlue(state));
         List<FeatureDto> featureDtos = features.stream().map(FeatureMapper::fromEntityToDto).collect(Collectors.toList());
 
         return new FeatureCollectionDto(GeoJsonParser.FEATURE_COLLECTION, featureDtos);

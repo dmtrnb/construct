@@ -8,9 +8,9 @@ import java.util.Properties;
 
 public class FeaturesOperation {
 
-    private static final String COLOR = "color";
-    private static final String RED = "red";
-    private static final String BLUE = "blue";
+    public static final String COLOR = "color";
+    public static final String RED = "red";
+    public static final String BLUE = "blue";
 
     public static void intersectsLineStrings(List<FeatureDto> list) {
         FeatureDto featureOne;
