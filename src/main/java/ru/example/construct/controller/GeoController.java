@@ -21,7 +21,7 @@ public class GeoController {
     }
 
     @GetMapping("/intersections")
-    public String getFeatureCollectionByState(boolean state) {
+    public FeatureCollectionDto getFeatureCollectionByState(boolean state) {
         return service.getFeatureCollectionByState(state);
     }
 }

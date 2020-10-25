@@ -9,6 +9,8 @@ import java.util.Properties;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class FeatureDto {
 
     private String type;
