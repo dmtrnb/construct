@@ -1,0 +1,20 @@
+my:
+  db:
+    platform: h2
+    jdbcUrl: jdbc:h2:mem:test
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+spring:
+  h2:
+    console:
+      enabled: true
+      path: "/h2"
+      settings:
+        web-allow-others: false
+        trace: false
+  jpa:
+    show-sql: true
+    database-platform: "org.hibernate.dialect.H2Dialect"
+  flyway:
+    baseline-on-migrate: true

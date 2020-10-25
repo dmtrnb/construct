@@ -1,8 +1,8 @@
 package ru.example.construct.service;
 
 import org.springframework.stereotype.Service;
-import ru.example.construct.service.dto.FeatureCollectionDto;
-import ru.example.construct.service.dto.FeatureDto;
+import ru.example.construct.repository.dto.FeatureCollectionDto;
+import ru.example.construct.repository.dto.FeatureDto;
 import ru.example.construct.service.util.FeaturesOperation;
 import ru.example.construct.service.util.GeoJsonParser;
 
@@ -16,5 +16,9 @@ public class GeoService {
         List<FeatureDto> list = Objects.requireNonNull(featureCollection).getFeatures();
         FeaturesOperation.intersectsLineStrings(list);
         return featureCollection;
+    }
+
+    public String getFeatureCollectionByState(boolean state) {
+        return Boolean.toString(state);
     }
 }

@@ -5,8 +5,8 @@ import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.CoordinateList;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
-import ru.example.construct.service.dto.FeatureCollectionDto;
-import ru.example.construct.service.dto.FeatureDto;
+import ru.example.construct.repository.dto.FeatureCollectionDto;
+import ru.example.construct.repository.dto.FeatureDto;
 import ru.example.construct.service.util.exception.NonLineStringException;
 import ru.example.construct.service.util.exception.WrongGeoJsonFormatException;
 

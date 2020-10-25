@@ -1,4 +1,4 @@
-package ru.example.construct.service.dto;
+package ru.example.construct.repository.dto;
 
 import lombok.*;
 

@@ -3,7 +3,7 @@ package ru.example.construct.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.example.construct.service.GeoService;
-import ru.example.construct.service.dto.FeatureCollectionDto;
+import ru.example.construct.repository.dto.FeatureCollectionDto;
 
 @RestController
 public class GeoController {
@@ -22,6 +22,6 @@ public class GeoController {
 
     @GetMapping("/intersections")
     public String getFeatureCollectionByState(boolean state) {
-        return Boolean.toString(state);
+        return service.getFeatureCollectionByState(state);
     }
 }

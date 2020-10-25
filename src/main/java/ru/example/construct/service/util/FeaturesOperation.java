@@ -1,7 +1,7 @@
 package ru.example.construct.service.util;
 
 import org.locationtech.jts.geom.Geometry;
-import ru.example.construct.service.dto.FeatureDto;
+import ru.example.construct.repository.dto.FeatureDto;
 
 import java.util.List;
 import java.util.Properties;
