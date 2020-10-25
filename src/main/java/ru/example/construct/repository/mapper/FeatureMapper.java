@@ -9,6 +9,7 @@ public class FeatureMapper {
 
         featureDto.setType(feature.getType());
         featureDto.setProperties(PropertyMapper.fromEntityToDto(feature.getProperties()));
+        featureDto.setGeometryDto(GeometryMapper.fromEntityToDto(feature.getGeometry()));
 
         return featureDto;
     }
@@ -16,10 +17,12 @@ public class FeatureMapper {
     public static Feature fromDtoToEntity(FeatureDto featureDto) {
         Feature feature = Feature.builder()
                 .type(featureDto.getType())
+                .geometry(GeometryMapper.fromDtoToEntity(featureDto.getGeometryDto()))
                 .properties(PropertyMapper.fromDtoToEntity(featureDto.getProperties()))
                 .build();
 
         feature.getProperties().forEach((p) -> p.setFeature(feature));
+        feature.getGeometry().setFeature(feature);
         return feature;
     }
 }

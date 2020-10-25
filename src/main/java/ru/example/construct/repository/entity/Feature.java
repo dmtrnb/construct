@@ -24,4 +24,8 @@ public class Feature {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "feature", cascade = CascadeType.ALL)
     private Set<PropertyItem> properties;
+
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "feature", cascade = CascadeType.ALL)
+    @JoinColumn(name = "geometry_id")
+    private GeometryEntity geometry;
 }
