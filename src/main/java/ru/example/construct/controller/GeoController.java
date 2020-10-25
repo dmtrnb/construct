@@ -18,5 +18,10 @@ public class GeoController {
     @PostMapping("/intersections")
     public FeatureCollectionDto intersection(@RequestBody String geoJson) {
         return service.intersection(geoJson);
-}
+    }
+
+    @GetMapping("/intersections")
+    public String getFeatureCollectionByState(boolean state) {
+        return Boolean.toString(state);
+    }
 }
