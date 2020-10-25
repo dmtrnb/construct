@@ -3,9 +3,7 @@ package ru.example.construct.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.example.construct.service.GeoService;
-
-import java.time.Instant;
-import java.util.Date;
+import ru.example.construct.service.dto.FeatureCollectionDto;
 
 @RestController
 public class GeoController {
@@ -18,17 +16,7 @@ public class GeoController {
     }
 
     @PostMapping("/intersections")
-    public String intersection(@RequestBody String geoJson) {
+    public FeatureCollectionDto intersection(@RequestBody String geoJson) {
         return service.intersection(geoJson);
 }
-
-    @GetMapping("/health/check")
-    public String health() {
-        return "Hello, now is " + Date.from(Instant.now());
-    }
-
-//    @RequestMapping
-//    public String home() {
-//        return null;
-//    }
 }
