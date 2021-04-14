@@ -11,4 +11,4 @@ curl -X POST -H "Content-Type: application/json" -d /geojson/ http://localhost:8
 curl http://localhost:8080/intersections?state=/state/
 
 Визуализация geojson:
-![Vizualization of geojson](/wiki_resources/example.png)
+![Vizualization of geojson](wiki_resources/example.png)
